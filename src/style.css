@@ -8,6 +8,10 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+#container {
+  padding-bottom: 60px;
+}
+
 #page-heading {
   width: 90%;
   font-size: calc(2rem + 1vw);
@@ -96,12 +100,13 @@ form input {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100vw;
-  padding: 20px;
+  height: 50px;
   font-style: italic;
   background: gainsboro;
 }

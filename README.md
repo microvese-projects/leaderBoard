@@ -29,7 +29,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 To Do List <a name="about-project"></a>
+# 📖 Leaderboard <a name="about-project"></a>
 
 **Leaderboard** is a project that was created to inline with the Microverse curriculumn. It is a app that makes calls to an api and displays recent scores posted on the API. In addition, it also allows the user to post some information to the API. 
 

@@ -11,31 +11,33 @@
     <h1 id="page-heading">
       Leaderboard
     </h1>
-    <!-- recent scores -->
-    <div id="recent-scores">
-      <div id="heading-recent-scores">
-        <h2>Recent scores</h2>
-        <button id="refresh">Refresh</button>
+    <div id="inner-container">
+      <!-- recent scores -->
+      <div id="recent-scores">
+        <div id="heading-recent-scores">
+          <h2>Recent scores</h2>
+          <button id="refresh">Refresh</button>
+        </div>
+        <ul id="scores-list">
+          <li class="score">Name: 100</li>
+          <li class="score">Name: 20</li>
+          <li class="score">Name: 50</li>
+          <li class="score">Name: 78</li>
+          <li class="score">Name: 125</li>
+          <li class="score">Name: 77</li>
+          <li class="score">Name: 42</li>
+        </ul>
       </div>
-      <ul id="scores-list">
-        <li class="score">Name: 100</li>
-        <li class="score">Name: 20</li>
-        <li class="score">Name: 50</li>
-        <li class="score">Name: 78</li>
-        <li class="score">Name: 125</li>
-        <li class="score">Name: 77</li>
-        <li class="score">Name: 42</li>
-      </ul>
+      <!-- add score -->
+      <form>
+        <h2>Add your score</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <label for="score">Score</label>
+        <input type="text" id="score" required>
+        <button type="submit">Submit</button>
+      </form>
     </div>
-    <!-- add score -->
-    <form>
-      <h2>Add your score</h2>
-      <label for="name">Name</label>
-      <input type="text" id="name" required>
-      <label for="score">Score</label>
-      <input type="text" id="score" required>
-      <button type="submit">Submit</button>
-    </form>
   </section>
   <footer>
     Copyright 2023

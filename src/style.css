@@ -1,3 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background: rgb(255, 255, 255);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#page-heading {
+  width: 90%;
+  font-size: calc(2rem + 1vw);
+  margin: 30px auto;
+}
+
+#heading-recent-scores,
+form,
+#inner-container {
+  display: flex;
+}
+
+#heading-recent-scores {
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+#heading-recent-scores h2 {
+  margin-right: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inner-container {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+#recent-scores {
+  flex: 1;
+}
+
+
+form {
+  width: 40%;
+  flex-direction: column;
+}
+
+form label {
+  display: none;
+}
+
+form input {
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: 3px solid rgb(12, 12, 12);
+}
+
+form button,
+#refresh {
+  width: fit-content;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: rgb(12, 12, 12);
+  border: 2px solid black;
+  font-weight: 500;
+  background: white;
+  box-shadow: 3px 3px black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding: 20px;
+  font-style: italic;
+  background: gainsboro;
 }

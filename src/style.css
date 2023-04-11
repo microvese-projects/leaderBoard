@@ -20,6 +20,15 @@ form,
   display: flex;
 }
 
+#inner-container {
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  min-width: 375px;
+  margin: 0 auto;
+  gap: calc(40px + 1vw);
+}
+
 #heading-recent-scores {
   align-items: center;
   width: 100%;
@@ -34,19 +43,30 @@ form,
   align-items: center;
 }
 
-#inner-container {
-  width: 70vw;
-  margin: 0 auto;
-}
-
 #recent-scores {
   flex: 1;
+}
+
+#scores-list {
+  list-style: none;
+  border: 3px solid black;
+}
+
+.score {
+  padding: 5px;
+  font-weight: 500;
+}
+
+.score:nth-child(even) {
+  background: lightgray;
 }
 
 
 form {
   width: 40%;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 form label {
@@ -57,10 +77,10 @@ form input {
   margin-bottom: 20px;
   padding: 5px 10px;
   border: 3px solid rgb(12, 12, 12);
+  font-weight: 500;
 }
 
-form button,
-#refresh {
+.btn {
   width: fit-content;
   padding: 5px 10px;
   cursor: pointer;
@@ -69,6 +89,11 @@ form button,
   font-weight: 500;
   background: white;
   box-shadow: 3px 3px black;
+}
+
+.btn:hover {
+  background: rgb(218, 216, 216);
+  font-weight: 600;
 }
 
 footer {
@@ -80,4 +105,26 @@ footer {
   padding: 20px;
   font-style: italic;
   background: gainsboro;
+}
+
+@media only screen and (min-width: 768px) {
+  #inner-container {
+    flex-direction: row;
+    max-width: 1000px;
+    align-items: flex-start;
+  }
+
+  form {
+    width: 35%;
+  }
+
+  form * {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  form h2 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
 }

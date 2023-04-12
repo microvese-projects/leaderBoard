@@ -14,7 +14,6 @@ const hitApi = async () => {
   const message = await response.json();
   const id = message.result.split(' ')[3];
   localStorage.setItem('id', id);
-  console.log(id);
 };
 
 const callApi = () => {

@@ -4,7 +4,9 @@
 }
 
 body {
-  background: rgb(255, 255, 255);
+  /* background: rgba(243, 237, 184, 0.4); */
+  background: #e9c46a;
+  color: #264653;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -16,6 +18,9 @@ body {
   width: 90%;
   font-size: calc(2rem + 1vw);
   margin: 30px auto;
+  box-shadow: -1px 1px 10px gray;
+  text-align: center;
+  padding-block: 5px;
 }
 
 #heading-recent-scores,
@@ -57,8 +62,13 @@ form,
 }
 
 .score {
-  padding: 5px;
+  padding: 15px;
   font-weight: 500;
+  box-shadow: inset 1px 0.5px 3px black;
+}
+
+.score:hover {
+  outline: 2px dashed #4fd0c1;
 }
 
 .score:nth-child(even) {
@@ -77,26 +87,46 @@ form label {
 }
 
 form input {
-  margin-bottom: 20px;
   padding: 5px 10px;
   border: 3px solid rgb(12, 12, 12);
   font-weight: 500;
+  background-color: #a7e8e0;
+}
+
+form input#name {
+  margin-bottom: 20px;
+}
+
+#message {
+  padding-block: 10px;
+  margin-top: 10px;
+  background: #a7e8e0;
+  color: green;
+  display: none;
 }
 
 .btn {
   width: fit-content;
   padding: 5px 10px;
   cursor: pointer;
-  color: rgb(12, 12, 12);
   border: 2px solid black;
   font-weight: 500;
-  background: white;
+  background: #4fd0c1;
+  color: #264653;
   box-shadow: 3px 3px black;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+}
+
+.btn[type='submit'] {
+  margin-top: 20px;
 }
 
 .btn:hover {
-  background: rgb(218, 216, 216);
+  background: #264653;
+  color: #e76f51;
   font-weight: 600;
+  box-shadow: 3px 3px 5px #4fd0c1;
 }
 
 footer {
@@ -105,10 +135,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 50px;
   font-style: italic;
   background: gainsboro;
+  box-shadow: 0 -1px 4px black;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {

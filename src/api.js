@@ -1,4 +1,6 @@
-const callApi = async () => {
+const fired = localStorage.getItem('id');
+
+const hitApi = async () => {
   const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
     method: 'POST',
     body: JSON.stringify({
@@ -10,6 +12,14 @@ const callApi = async () => {
   });
 
   const message = await response.json();
+  const id = message.result.split(' ')[3];
+  localStorage.setItem('id', id);
+  console.log(id);
+};
+
+const callApi = () => {
+  if (fired) return;
+  hitApi();
 };
 
 export default callApi;

@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst callApi = async () => {\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {\n    method: 'POST',\n    body: JSON.stringify({\n      name: \"Ben's Game\",\n    }),\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n  });\n\n  const message = await response.json();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callApi);\n\n//# sourceURL=webpack://leaderboard/./src/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst fired = localStorage.getItem('id');\n\nconst hitApi = async () => {\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {\n    method: 'POST',\n    body: JSON.stringify({\n      name: \"Ben's Game\",\n    }),\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n  });\n\n  const message = await response.json();\n  const id = message.result.split(' ')[3];\n  localStorage.setItem('id', id);\n  console.log(id);\n};\n\nconst callApi = () => {\n  if (fired) return;\n  hitApi();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callApi);\n\n//# sourceURL=webpack://leaderboard/./src/api.js?");
 
 /***/ }),
 
@@ -126,7 +126,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./api.js */ \"./src/api.js\");\n\n\n\n(0,_api_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./api.js */ \"./src/api.js\");\n/* harmony import */ var _postScore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./postScore.js */ \"./src/postScore.js\");\n\n\n\n\nconst form = document.querySelector('form');\n\n(0,_api_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nform.addEventListener('submit', _postScore_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/postScore.js":
+/*!**************************!*\
+  !*** ./src/postScore.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postScore = async (e) => {\n  e.preventDefault();\n  const name = e.target.querySelectorAll('#name')[0].value.toLowerCase();\n  const scored = e.target.querySelectorAll('#score')[0].value;\n\n  const id = await localStorage.getItem('id');\n\n  try {\n    fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`, {\n      method: 'POST',\n      body: JSON.stringify({\n        user: name,\n        score: scored,\n      }),\n      headers: {\n        'Content-type': 'application/json; charset=UTF-8',\n      },\n    });\n  } catch (err) {\n    console.log(err);\n  }\n  e.target.reset();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postScore);\n\n//# sourceURL=webpack://leaderboard/./src/postScore.js?");
 
 /***/ })
 

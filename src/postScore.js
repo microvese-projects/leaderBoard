@@ -8,7 +8,7 @@ const fade = () => {
       clearInterval(inter);
     } else {
       message.style.opacity = i / 10;
-      i--;
+      i -= 1;
     }
   }, 100);
 };

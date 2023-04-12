@@ -17,7 +17,7 @@ const postScore = async (e) => {
       },
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
   e.target.reset();
 };

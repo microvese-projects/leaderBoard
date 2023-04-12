@@ -87,11 +87,22 @@ form label {
 }
 
 form input {
-  margin-bottom: 20px;
   padding: 5px 10px;
   border: 3px solid rgb(12, 12, 12);
   font-weight: 500;
   background-color: #a7e8e0;
+}
+
+form input#name {
+  margin-bottom: 20px;
+}
+
+#message {
+  padding-block: 10px;
+  margin-top: 10px;
+  background: #a7e8e0;
+  color: green;
+  display: none;
 }
 
 .btn {
@@ -105,6 +116,10 @@ form input {
   box-shadow: 3px 3px black;
   border-radius: 3px;
   transition: all 0.3s linear;
+}
+
+.btn[type='submit'] {
+  margin-top: 20px;
 }
 
 .btn:hover {

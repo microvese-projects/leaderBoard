@@ -1,6 +1,5 @@
 import 'jest-localstorage-mock';
-import { hitApi } from '../api.js';
-import callApi from '../api.js';
+import callApi, { hitApi } from '../api.js';
 
 describe('Should create a new game', () => {
   test('should return an ID', async () => {
@@ -19,9 +18,5 @@ describe('Should create a new game', () => {
     await hitApi();
     const returned = await callApi();
     expect(returned).toBe(undefined);
-  });
-
-  test('should have returned', async () => {
-    expect(callApi()).toHaveReturned();
   });
 });

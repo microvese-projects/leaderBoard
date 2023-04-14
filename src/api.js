@@ -14,6 +14,7 @@ const hitApi = async () => {
   const message = await response.json();
   const id = message.result.split(' ')[3];
   localStorage.setItem('id', id);
+  return message.result;
 };
 
 const callApi = () => {
@@ -22,3 +23,4 @@ const callApi = () => {
 };
 
 export default callApi;
+export { hitApi };

@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* background: rgba(243, 237, 184, 0.4); */
+  background: #e9c46a;
+  color: #264653;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#container {
+  padding-bottom: 60px;
+}
+
+#page-heading {
+  width: 90%;
+  font-size: calc(2rem + 1vw);
+  margin: 30px auto;
+  box-shadow: -1px 1px 10px gray;
+  text-align: center;
+  padding-block: 5px;
+}
+
+#heading-recent-scores,
+form,
+#inner-container {
+  display: flex;
+}
+
+#inner-container {
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  min-width: 375px;
+  margin: 0 auto;
+  gap: calc(40px + 1vw);
+}
+
+#heading-recent-scores {
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+#heading-recent-scores h2 {
+  margin-right: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#recent-scores {
+  flex: 1;
+}
+
+#scores-list {
+  list-style: none;
+  border: 3px solid black;
+}
+
+.score {
+  padding: 15px;
+  font-weight: 500;
+  box-shadow: inset 1px 0.5px 3px black;
+}
+
+.score:hover {
+  outline: 2px dashed #4fd0c1;
+}
+
+.score:nth-child(even) {
+  background: lightgray;
+}
+
+form {
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+form label {
+  display: none;
+}
+
+form input {
+  padding: 5px 10px;
+  border: 3px solid rgb(12, 12, 12);
+  font-weight: 500;
+  background-color: #a7e8e0;
+}
+
+form input#name {
+  margin-bottom: 20px;
+}
+
+#message {
+  padding-block: 10px;
+  margin-top: 10px;
+  background: #a7e8e0;
+  color: green;
+  display: none;
+}
+
+.btn {
+  width: fit-content;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 2px solid black;
+  font-weight: 500;
+  background: #4fd0c1;
+  color: #264653;
+  box-shadow: 3px 3px black;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+}
+
+.btn[type='submit'] {
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background: #264653;
+  color: #e76f51;
+  font-weight: 600;
+  box-shadow: 3px 3px 5px #4fd0c1;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-style: italic;
+  background: gainsboro;
+  box-shadow: 0 -1px 4px black;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  #inner-container {
+    flex-direction: row;
+    max-width: 1000px;
+    align-items: flex-start;
+  }
+
+  form {
+    width: 35%;
+  }
+
+  form * {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  form h2 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}

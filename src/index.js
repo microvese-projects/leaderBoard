@@ -21,6 +21,9 @@ const setList = async () => {
 };
 
 callApi();
-form.addEventListener('submit', postScore);
+form.addEventListener('submit', async (e) => {
+  await postScore(e);
+  setList();
+});
 refreshBtn.addEventListener('click', setList);
 window.onload = setList;
